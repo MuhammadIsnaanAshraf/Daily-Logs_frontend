@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        h1 { 
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <table>
+  <thead>
+    <tr>
+      <td rowspan="1">Student Fees</td>
+    </tr>
+    <tr>
+      {{#each columnKeys as |columnKey|}}
+        <th>{{columnKey}}</th>
+      {{/each}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each hrUsers.users as |user|}}
+      <tr>
+        {{#each ../columnKeys as |key|}}
+          <td>{{lookup user.user key}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+    
+</body>
+</html>
